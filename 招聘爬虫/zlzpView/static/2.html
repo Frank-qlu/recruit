@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="echarts.common.min.js"></script>
+</head>
+<body  style="height:900px; margin: 0;height: 900px">
+<div id="container" style="height: 100%"></div>
+<script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+app.title = '世界人口总量 - 条形图';
+
+option = {
+    title: {
+        text: '世界人口总量',
+        subtext: '数据来自网络'
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        data: ['2011年', '2012年']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: {
+        type: 'value',
+        boundaryGap: [0, 0.01]
+    },
+    yAxis: {
+        type: 'category',
+        data: ['巴西','印尼','美国','印度','中国','世界人口(万)']
+    },
+    series: [
+        {
+            name: '2011年',
+            type: 'bar',
+            data: [18203, 23489, 29034, 104970, 131744, 630230]
+        }
+    ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+</script>>
+</body>
+</html>

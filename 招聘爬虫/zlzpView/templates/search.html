@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<ol class="list-group">
+{% for item in g.zw %}
+  <li class="list-group-item">{{ item["pname"] }}</li>
+    <li class="list-group-item">{{item["cname"] }} </li>
+{#    <li class="list-group-item">{{ item["workplace"] }}</li>#}
+    <li class="list-group-item">{{item["welfare"] }} </li>
+    <li class="list-group-item">{{ item["education"] }}</li>
+    <li class="list-group-item">{{item["requirement"] }} </li>
+{#    <li class="list-group-item">{{item["ctype"] }} </li>#}
+    <li class="list-group-item">{{item["scale"] }} </li>
+{#    <li class="list-group-item">{{ item["nature"] }}</li>#}
+    <li class="list-group-item"><a href="{{ item["dlink"] }}" class="list-group-item" >查看更多</a> </li>
+    <br>
+    <br>
+    {% endfor %}
+</ol>
+{% endblock %}
