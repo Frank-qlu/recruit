@@ -29,3 +29,11 @@
 该项目适合新手学习和交流，如果有任何问题请联系我Email: lizhipengqilu@gmail.com
 同时希望大家提出宝贵意见，欢迎学习交流，如果你喜欢该项目，请收藏或者fork一下，你的主动将是我前行的动力
 ###
+项目预览
+###
+https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/1.png
+https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/2.png
+https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/educate.png
+https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/experience.png
+https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/wordcount.png
+https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/search.png
