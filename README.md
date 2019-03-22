@@ -35,7 +35,7 @@
 ![Image text](https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/2.png)
 ![Image text](https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/wordcount.png)
 ![Image text](https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/educate.png)
-![Image text]https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/experience.png)
+![Image text](https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/experience.png)
 ![Image text](https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/search.png)
 
 
