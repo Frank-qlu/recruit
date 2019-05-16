@@ -1,7 +1,7 @@
 # recruit
 招聘爬虫+数据分析
 1.爬虫：
-    采用Scrapy 分布式爬虫技术，使用mongodb作为数据存储，爬取的网站Demo为51job，数据我目前爬了有几千条
+    采用Scrapy 分布式爬虫技术，使用mongodb作为数据存储，爬取的网站Demo为51job，数据我目前爬了有几万条
 2.数据处理：
      采用pandas对爬取的数据进行清晰和处理
 2.数据分析：
@@ -33,8 +33,8 @@
 ###
 <h4>version 1.0:</h4></br>
 &nbsp; &nbsp;         首次更新项目</br>
-<h4>version 2.0(2019-05-16更新):</h4></br>
- &nbsp;&nbsp;         1.优化界面，采用blueprint设计模，代码稍后更新</br>
+<h4>version 2.0(2019-05-16更新，代码稍后更新):</h4></br>
+ &nbsp;&nbsp;         1.优化界面，采用blueprint设计模式</br>
    &nbsp;&nbsp;        2.添加高级搜索(聚合查找)</br>
     &nbsp;&nbsp;       3.添加前后台，增添redis数据库</br>
    &nbsp;&nbsp;        3. 后台设置招聘信息过期时间</br>
