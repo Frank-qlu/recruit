@@ -43,12 +43,12 @@
    &nbsp;&nbsp;        1.采用flask-restful</br>
     &nbsp;&nbsp;       2.优化数据分析模块</br>
     &nbsp;&nbsp;       3. 设置兴趣标签,添加推荐系统，相似职位推荐</br>
-项目预览
-###
+<h4>项目预览</h4>
+###</br>
 <img src="https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/1.png" />
 <img src="https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/2.png" />
 <img src="https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/wordcount.png" />
-<img src="https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/educate.png" />
+<img src="https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/education.png" />
 <img src="https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/experience.png" />
 <img src="https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/search.png" />
 <img src="https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/back.png" />
