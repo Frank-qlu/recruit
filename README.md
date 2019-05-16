@@ -28,7 +28,21 @@
 ###
 该项目适合新手学习和交流，如果有任何问题请联系我Email: lizhipengqilu@gmail.com
 同时希望大家提出宝贵意见，欢迎学习交流，如果你喜欢该项目，请收藏或者fork一下，你的主动将是我前行的动力
+由于服务器运行需要成本，如何你想作一点贡献，欢迎捐赠，非常感谢。
+[Image text](https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/wei.jpg)
 ###
+version 1.0:
+          首次更新项目
+version 2.0(2019-05-16更新)
+          1.优化界面，采用blueprint设计模，代码稍后更新
+          2.添加高级搜索(聚合查找)
+          3.添加前后台，增添redis数据库
+          3. 后台设置招聘信息过期时间
+          4.后台用户管理
+version 3.0(未来):
+          1.采用flask-restful
+          2.优化数据分析模块
+          3. 设置兴趣标签，添加协同过滤算法
 项目预览
 ###
 ![Image text](https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/1.png)
@@ -37,7 +51,7 @@
 ![Image text](https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/educate.png)
 ![Image text](https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/experience.png)
 ![Image text](https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/search.png)
-
+![Image text](https://github.com/Frank-qlu/recruit/blob/master/%E6%8B%9B%E8%81%98%E7%88%AC%E8%99%AB/images/back.png)
 
 
 
