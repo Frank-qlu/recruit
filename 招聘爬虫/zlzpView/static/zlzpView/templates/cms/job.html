@@ -1,0 +1,61 @@
+{% extends  "cms/cms_index.html" %}
+{% block title %}
+     <h3 >招聘信息定时清除</h3>
+{% endblock %}
+
+{% block content %}
+    <script type="text/javascript">
+function confirmd() {
+            var msg = "确定清除之前职位信息？";
+            if (confirm(msg)==true){
+                return true;
+            }else{
+                return false;
+            }
+        }
+</script>
+    <form class="form-inline">
+    <select class="form-control">
+  <option>一天</option>
+  <option>三天</option>
+  <option>一周</option>
+  <option>两周</option>
+  <option>三周</option>
+  <option>一个月</option>
+    <option>二个月</option>
+    <option>三个月</option>
+    <option>半年</option>
+</select>
+    <button type="submit" class="btn btn-default" onclick="return confirmd()">清除</button>
+{#    <!--删除-->#}
+{#     <a href="http://www.baidu.com" onclick="return confirmd()">删除</a>#}
+ <div class="panel panel-default">
+  <!-- Default panel contents -->
+  <!-- Table -->
+  <table class="table">
+     <thead>
+    <tr>
+        <th>职位名</th>
+        <th>公司名</th>
+        <th>地点</th>
+        <th>经验</th>
+        <th>薪资</th>
+        <th>更多</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in g.job %}
+    <tr>
+        <td>{{ item["pname"] }}</td>
+        <td>{{ item["cname"] }}</td>
+        <td>{{ item["workplace"] }}</td>
+         <td>{{ item["experience"] }}</td>
+    <td>{{ item["salary"] }}</td>
+        <td><a href="{{ item["dlink"] }}">more</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+</form>
+{% endblock %}

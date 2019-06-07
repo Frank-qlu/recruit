@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+{#<ol class="list-group">#}
+{#{% for item in g.zw %}#}
+{#  <li class="list-group-item">{{ item["pname"] }}</li>#}
+{#    <li class="list-group-item">{{item["cname"] }} </li>#}
+{#      <li class="list-group-item">{{item["salary"] }} </li>#}
+{#    <li class="list-group-item">{{ item["workplace"] }}</li>#}
+{#    <li class="list-group-item">{{item["welfare"] }} </li>#}
+{#    <li class="list-group-item">{{ item["education"] }}</li>#}
+{#    <li class="list-group-item">{{item["requirement"] }} </li>#}
+{#    <li class="list-group-item">{{item["ctype"] }} </li>#}
+{#    <li class="list-group-item">{{item["scale"] }} </li>#}
+{#    <li class="list-group-item">{{ item["nature"] }}</li>#}
+{#    <li class="list-group-item"><a href="{{ item["dlink"] }}" class="list-group-item" >查看更多</a> </li>#}
+{#    <br>#}
+{#    <br>#}
+{#    {% endfor %}#}
+{#</ol>#}
+    <div class="panel panel-default">
+  <!-- Default panel contents -->
+  <!-- Table -->
+  <table class="table">
+     <thead>
+    <tr>
+        <th>职位名</th>
+        <th>公司名</th>
+        <th>地点</th>
+        <th>经验</th>
+        <th>薪资</th>
+        <th>更多</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in g.zw %}
+    <tr>
+        <td>{{ item["pname"] }}</td>
+        <td>{{ item["cname"] }}</td>
+        <td>{{ item["workplace"] }}</td>
+         <td>{{ item["experience"] }}</td>
+    <td>{{ item["salary"] }}</td>
+        <td><a href="{{ item["dlink"] }}">more</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

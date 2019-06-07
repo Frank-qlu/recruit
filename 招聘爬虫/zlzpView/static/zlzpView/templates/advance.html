@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{#{% block content %}#}
+{#  <div class="embed-responsive embed-responsive-16by9">#}
+{#<iframe class="center-block" src="{{ url_for("static",filename="cy.svg") }}" style="height: 1000px;width: 100%;float: right" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" >#}
+{#</iframe>#}
+{#</div>#}
+{#{% endblock %}#}
+{% block content %}
+{#<ol class="list-group">#}
+{#{% for item in g.zw %}#}
+{#  <li class="list-group-item">{{ item["pname"] }}</li>#}
+{#    <li class="list-group-item">{{item["cname"] }} </li>#}
+{#      <li class="list-group-item">{{item["salary"] }} </li>#}
+{#    <li class="list-group-item">{{ item["workplace"] }}</li>#}
+{#    <li class="list-group-item">{{item["welfare"] }} </li>#}
+{#    <li class="list-group-item">{{ item["education"] }}</li>#}
+{#    <li class="list-group-item">{{item["requirement"] }} </li>#}
+{#    <li class="list-group-item">{{item["ctype"] }} </li>#}
+{#    <li class="list-group-item">{{item["scale"] }} </li>#}
+{#    <li class="list-group-item">{{ item["nature"] }}</li>#}
+{#    <li class="list-group-item"><a href="{{ item["dlink"] }}" class="list-group-item" >查看更多</a> </li>#}
+{#    <br>#}
+{#    <br>#}
+{#    {% endfor %}#}
+{#</ol>#}
+    <div class="container">
+   <div class="row">
+       <form class="navbar-form navbar-left" method="post">
+        <div class="form-group">职位名</br>
+          <input type="text" name="zhiwei" class="form-control" placeholder="请输入职位信息" >
+        </div>
+           <div class="form-group" >工作地点</br>
+          <input type="text" name="zhiwei1" class="form-control" placeholder="请输入工作地点" >
+        </div>
+           <div class="form-group">学历</br>
+<select name="">
+    <option value="0">大专</option>
+<option value="0">本科</option>
+<option value="1">硕士</option>
+    <option value="1">博士</option>
+    <option value="1">不限</option>
+
+</select>
+        </div>
+        <button type="submit" class="btn btn-default">搜索</button>
+      </form>
+   </div>
+   <div class="row">
+       <div class="panel panel-default">
+  <!-- Default panel contents -->
+  <!-- Table -->
+  <table class="table" >
+     <thead >
+    <tr>
+        <th>职位名</th>
+        <th>公司名</th>
+        <th>地点</th>
+        <th>经验</th>
+        <th>薪资</th>
+        <th>更多</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in g.zw %}
+    <tr>
+        <td>{{ item["pname"] }}</td>
+        <td>{{ item["cname"] }}</td>
+        <td>{{ item["workplace"] }}</td>
+         <td>{{ item["experience"] }}</td>
+    <td>{{ item["salary"] }}</td>
+        <td><a href="{{ item["dlink"] }}">more</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+   </div>
+</div>
+{% endblock %}

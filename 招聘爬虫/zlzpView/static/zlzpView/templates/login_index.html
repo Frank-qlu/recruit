@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>欢迎登陆网络爬虫招聘信息检索系统</title>
+
+<link rel="stylesheet" href="{{ url_for("static",filename="login/css/style.css") }}" />
+<style type="text/css">
+a:link,a:visited{
+ text-decoration:none;  /*超链接无下划线*/
+}
+a:hover{
+ text-decoration:underline;  /*鼠标放上去有下划线*/
+}
+    Footer {
+position:fixed;
+{#margin-right:98px;#}
+{#padding-right:15px;#}
+bottom:0;
+margin-bottom:0;
+width:100%;
+text-align:center;
+}
+
+
+</style>
+<body>
+<br class="login-container">
+	<h1>基于python的网络爬虫招聘信息检索系统</h1>
+
+{#	<div class="connect">#}
+{#		<p>来自外太空的小兴芸</p>#}
+{#	</div>#}
+</br>
+</br>
+	<form  method="post" >
+		<div>
+			<input type="text" name="email" class="username" placeholder="邮箱" autocomplete="off"/>
+		</div>
+		<div>
+			<input type="password" name="password" class="password" placeholder="密码" oncontextmenu="return false" onpaste="return false" />
+		</div>
+		<button id="submit" type="submit">登 陆</button>
+	</form>
+
+	<a href="/register/">
+		<button type="button" class="register-tis">还有没有账号？</button>
+	</a>
+<div>
+    <a href="/forget_password/">忘记密码</a>
+</div>
+<div>
+    {% if message %}
+            <p style="text-align: center"  class="text-danger">{{ message }}</p>
+        {% endif %}
+    </div>
+</div>
+
+<script src="{{ url_for("static",filename='login/js/jquery.min.js') }}"></script>
+<script src="{{ url_for("static",filename='login/js/common.js') }}"></script>
+<!--背景图片自动更换-->
+<script src="{{ url_for("static",filename='login/js/supersized.3.2.7.min.js') }}"></script>
+<script src="{{ url_for("static",filename='login/js/supersized-init.js') }}"></script>
+<!--表单验证-->
+<script src="{{ url_for("static",filename='login/js/jquery.validate.min.js') }}"></script>
+
+</body>
+<footer >
+    <div class="container">
+        <a href="/cms/login/">后台登录</a>
+        <p >备案号：<a href="http://www.miibeian.gov.cn/" target="_blank">鲁ICP备18038097</a></p>
+    </div>
+</footer>
+</html>

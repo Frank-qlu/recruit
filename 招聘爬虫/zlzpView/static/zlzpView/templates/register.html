@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>欢迎注册网络爬虫招聘信息检索系统</title>
+<link rel="stylesheet" href="{{ url_for("static",filename="login/css/style.css") }}" />
+<body>
+<div class="register-container">
+	<h1>欢迎注册</h1>
+{#	<div class="connect">#}
+{#		<p>Link the world. Share to world.</p>#}
+{#	</div>#}
+	
+	<form  method="post" >
+		<div>
+			<input type="text" name="username" class="username" placeholder="您的用户名" autocomplete="off"/>
+		</div>
+		<div>
+			<input type="password" name="password" class="password" placeholder="输入密码" oncontextmenu="return false" onpaste="return false" />
+		</div>
+		<div>
+			<input type="password" name="confirm_password" class="confirm_password" placeholder="再次输入密码" oncontextmenu="return false" onpaste="return false" />
+		</div>
+		<div>
+			<input type="email" name="email" class="email" placeholder="输入邮箱地址" oncontextmenu="return false" onpaste="return false" />
+		</div>
+		<button id="submit" type="submit">注 册</button>
+	</form>
+	<a href="/">
+		<button type="button" class="register-tis">已经有账号？</button>
+	</a>
+{% if message %}
+            <p style="text-align: center"  class="text-danger">{{ message }}</p>
+        {% endif %}
+</div>
+
+
+<script src="{{ url_for("static",filename="login/js/jquery.min.js") }}"></script>
+<script src="{{ url_for("static",filename="login/js/common.js") }}"></script>
+<!--背景图片自动更换-->
+<script src="{{ url_for("static",filename="login/js/supersized.3.2.7.min.js") }}"></script>
+<script src="{{ url_for("static",filename="login/js/supersized-init.js") }}"></script>
+<!--表单验证-->
+<script src="{{ url_for("static",filename="login/js/jquery.validate.min.js") }}"></script>
+</body>
+</html>

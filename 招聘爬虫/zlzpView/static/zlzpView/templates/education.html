@@ -1,0 +1,51 @@
+{% extends 'base.html'%}
+{% block head %}
+     <script src="{{ url_for("static",filename="echarts.common.min.js") }}"></script>
+    {% endblock %}
+{% block content %}
+<div id="container" style="width: 700px;height: 500px"></div>
+<script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+app.title = '招聘职位学历要求';
+
+option = {
+    title: {
+        text: '招聘职位学历要求',
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: {
+        type: 'value',
+        boundaryGap: [0, 0.01]
+    },
+    yAxis: {
+        type: 'category',
+        data: ['博士','硕士','本科','大专']
+    },
+    series: [
+        {
+            name: '{{ g.time }}',
+            type: 'bar',
+            data: [{{ g.doctor }}, {{ g.master }}, {{ g.undergraduate }},{{g.college}} ]
+        }
+    ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+</script>>
+{% endblock %}

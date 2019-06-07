@@ -1,0 +1,272 @@
+{% extends  "cms/cms_index.html" %}
+{% block title %}
+     <h3 >用户信息管理</h3>
+{% endblock %}
+
+{% block content %}
+    <link href="../../BootStrap/StuPersonInfo/bootstrap.min.css" rel="stylesheet" />
+<script src="../../BootStrap/StuPersonInfo/bootstrap.min.js"></script>
+<script src="../../BootStrap/StuPersonInfo/jquery.min.js"></script>
+{#@*表格JS*@#}
+<link href="../../BootStrap/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet" />
+<meta name="viewport" content="width=device-wdith,initia-scale=1.0">
+{#@*动态添加表格*@#}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../../BootStrap/datagrid/css/bootstrap-table.min.css" rel="stylesheet" />
+<link href="../../BootStrap/datagrid/css/bootstrap.min.css" rel="stylesheet" />
+<script src="../../BootStrap/datagrid/js/jquery.min.js"></script>
+<script src="../../BootStrap/datagrid/js/jquery.base64.js"></script>
+<script src="../../BootStrap/datagrid/js/bootstrap-table.js"></script>
+<script src="../../BootStrap/datagrid/js/bootstrap-table-export.js"></script>
+{#@*添加批量删除*@#}
+<meta charset="utf-8">
+<script type="text/javascript" src="../../BootStrap/datagrid/js/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+$("#btnDel").click(function () {
+$(":checked").parent().parent().fadeOut("show"); //隐藏所有被选中的input元素
+//parent() 获得当前匹配元素集合中每个元素的父元素,
+})
+$("tr").mousemove(function () {
+$(this).css("background", "#F0F0F0"); //鼠标经过背景颜色变为灰色
+})
+$("tr").mouseout(function () {
+$(this).css("background", "#fff"); //离开后背景颜色回复白色
+})
+//全选
+$("#checkAll").click(function () {
+if ($("#checkAll").attr("checked") == false) {
+$("input[name='checkbox']").each(function () {
+$(this).attr("checked", true);
+});
+} else {
+$("input[name='checkbox']").each(function () {
+$(this).attr("checked", false);
+});
+}
+});
+});
+</script>
+{#@*添加一行新表格数据*@#}
+<script>
+function append() {
+var strAppend = '<tr style="background: rgb(255, 255, 255) none repeat scroll 0% 0%;"><td ><input type="checkbox" value="" editable="false" name="checkbox"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><tr>';
+$("#AddFamily tbody ").append(strAppend).editableTableWidget();
+}
+</script>
+{#@*表格样式CSS*@#}
+<style>
+table {
+border-collapse: collapse;
+border: 1px solid #FFFFFF;
+}
+table td {
+text-align: center;
+height: 30px;
+font-size: 12px;
+line-height: 30px;
+border: 1px solid #efecec;
+}
+</style>
+{#@*添加批量删除*@#}
+<script src="../../JS/TableJs.js"></script>
+</head>
+<body>
+<script src="../../BootStrap/FamilyJS.js"></script>
+{#@*按钮*@#}
+<div class="heading">
+{#@*添加按钮*@#}
+<button id="build" type="button" class="btn btn-success" data-toggle="modal" data-target="" onclick="append()">
+<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加
+</button>
+{#@*修改按钮*@#}
+<button id="btnEdit" type="button" class="btn btn-warning">
+<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>修改
+</button>
+{#@*删除按钮---无弹出框*@#}
+<button id="btnDel" type="button" class="btn btn-danger" data-toggle="modal" data-target="#DeleteForm" onclick="">
+<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>删除
+</button>
+</div>
+{#@*表格*@#}
+<div class="widget-content padded clearfix">
+    <table id="AddFamily" class="table table-bordered table-striped" width="1000px" border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto">
+<thead>
+<th class="check-header hidden-xs"  style="text-align: center">
+<input id="checkAll" name="checkAll" type="checkbox"  style="text-align: center">
+<th style="text-align: center">用户id</th>
+<th style="text-align: center">用户名 </th>
+<th  style="text-align: center">邮箱 </th>
+<th  style="text-align: center">注册时间</th>
+</thead>
+<tbody id="mainbody">
+{#@*从数据库读取的数据，遍历ViewModel里面的字段并赋值*@#}
+{#@foreach (FamilyInfoViewModel enStuFam in ViewData["DataList"] as List<FamilyInfoViewModel>)#}
+{#{#}
+{% for user1 in g.user %}
+<tr>
+<td>
+<input name="checkbox" type="checkbox" id="1">
+</td>
+{#<td data-field="Name">@enStuFam.Name </td>#}
+{#<td data-field="RelationShip">@enStuFam.RelationShip</td>#}
+{#<td data-field="Age">@enStuFam.Age</td>#}
+<td>{{ user1.id }}</td>
+    <td>{{ user1.username }}</td>
+    <td>{{ user1.email }}</td>
+    <td>{{ user1.join_time }}  </td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+<link href="../../BootStrap/jquery.bdt.css" rel="stylesheet" />
+{#@*创建表格*@#}
+<script>
+//绑定编辑、回车事件
+$(function () {
+// $('#build').click(build);//实现创建表格
+$('#btnEdit').click(edit);
+$('#cells, #rows').keyup(function (e) {
+if (e.keyCode === 13) {
+//添加存入数据库的代码
+}
+});
+});
+//将表格转成可编辑的表格
+function edit(index) {
+// $('#table').editableTableWidget();--效果是单击编辑按钮后，所有的都可以编辑
+// $(":checked").editableTableWidget();
+$(":checked").parent().parent().editableTableWidget();//整行的可以编辑
+}
+//转成可编辑的表格
+/*global $, window*/
+$.fn.editableTableWidget = function (options) {
+'use strict';
+return $(this).each(function () {
+var buildDefaultOptions = function () {
+var opts = $.extend({}, $.fn.editableTableWidget.defaultOptions);
+opts.editor = opts.editor.clone();
+return opts;
+},
+activeOptions = $.extend(buildDefaultOptions(), options),
+ARROW_LEFT = 37, ARROW_UP = 38, ARROW_RIGHT = 39, ARROW_DOWN = 40, ENTER = 13, ESC = 27, TAB = 9,
+element = $(this),
+editor = activeOptions.editor.css('position', 'absolute').hide().appendTo(element.parent()),
+active,
+showEditor = function (select) {
+active = element.find('td:focus');
+if (active.length) {
+editor.val(active.text())
+.removeClass('error')
+.show()
+.offset(active.offset())
+.css(active.css(activeOptions.cloneProperties))
+.width(active.width())
+.height(active.height())
+.focus();
+if (select) {
+editor.select();
+}
+}
+},
+setActiveText = function () {
+var text = editor.val(),
+evt = $.Event('change'),
+originalContent;
+if (active.text() === text || editor.hasClass('error')) {
+return true;
+}
+originalContent = active.html();
+active.text(text).trigger(evt, text);
+if (evt.result === false) {
+active.html(originalContent);
+}
+},
+movement = function (element, keycode) {
+if (keycode === ARROW_RIGHT) {
+return element.next('td');
+} else if (keycode === ARROW_LEFT) {
+return element.prev('td');
+} else if (keycode === ARROW_UP) {
+return element.parent().prev().children().eq(element.index());
+} else if (keycode === ARROW_DOWN) {
+return element.parent().next().children().eq(element.index());
+}
+return [];
+};
+editor.blur(function () {
+setActiveText();
+editor.hide();
+}).keydown(function (e) {
+if (e.which === ENTER) {
+setActiveText();
+editor.hide();
+active.focus();
+e.preventDefault();
+e.stopPropagation();
+} else if (e.which === ESC) {
+editor.val(active.text());
+e.preventDefault();
+e.stopPropagation();
+editor.hide();
+active.focus();
+} else if (e.which === TAB) {
+active.focus();
+} else if (this.selectionEnd - this.selectionStart === this.value.length) {
+var possibleMove = movement(active, e.which);
+if (possibleMove.length > 0) {
+possibleMove.focus();
+e.preventDefault();
+e.stopPropagation();
+}
+}
+})
+.on('input paste', function () {
+var evt = $.Event('validate');
+active.trigger(evt, editor.val());
+if (evt.result === false) {
+editor.addClass('error');
+} else {
+editor.removeClass('error');
+}
+});
+element.on('click keypress dblclick', showEditor)
+.css('cursor', 'pointer')
+.keydown(function (e) {
+var prevent = true,
+possibleMove = movement($(e.target), e.which);
+if (possibleMove.length > 0) {
+possibleMove.focus();
+} else if (e.which === ENTER) {
+showEditor(false);
+} else if (e.which === 17 || e.which === 91 || e.which === 93) {
+showEditor(true);
+prevent = false;
+} else {
+prevent = false;
+}
+if (prevent) {
+e.stopPropagation();
+e.preventDefault();
+}
+});
+element.find('td').prop('tabindex', 1);
+$(window).on('resize', function () {
+if (editor.is(':visible')) {
+editor.offset(active.offset())
+.width(active.width())
+.height(active.height());
+}
+});
+});
+};
+$.fn.editableTableWidget.defaultOptions = {
+cloneProperties: ['padding', 'padding-top', 'padding-bottom', 'padding-left', 'padding-right',
+'text-align', 'font', 'font-size', 'font-family', 'font-weight',
+'border', 'border-top', 'border-bottom', 'border-left', 'border-right'],
+editor: $('<input>')
+};
+</script>
+{% endblock %}
