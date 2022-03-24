@@ -24,11 +24,6 @@
                   activate
    2. python zlzpView.py
 ###
-       
-###
-该项目适合新手学习和交流，如果有任何问题请联系我Email: lizhipengqilu@gmail.com
-同时希望大家提出宝贵意见，欢迎学习交流，如果你喜欢该项目，请收藏或者fork一下，你的主动将是我前行的动力
-
 ###
 <h4>version 1.0:</h4></br>
 &nbsp; &nbsp;         首次更新项目</br>
